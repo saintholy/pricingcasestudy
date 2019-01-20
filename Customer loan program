@@ -1,0 +1,60 @@
+print('**********************************************************************')
+print('********* You are welcome to Basic consumer Loan Program *************')
+print('**********************************************************************')
+
+def LoanDetails(p=None,i=None,n=None):
+    p = input('Please enter Loan Principal:'     )
+    i = input('Enter interest rate of Loan:'     )
+    n = input ('Enter the number of years of loan contracted:'    )
+    pmt = input('Enter the Fixed payment of loan:'     )
+
+    
+
+    
+def Amount(p,i,n):
+    amt = p * (1 + i) ** n
+    print('Loan Amount is:',amt)
+
+def Anuity(pmt,i,n):
+    ant = pmt * (1 + i) ** n - 1/ i
+    print('Anuity amount is:',ant)
+    
+def loanDate(lend_date=None,rep_day_month=None,term_in_month=None):
+    lend_date = input('Enter lending date - (dd/mm/yy):'   )
+    rep_date = input('Enter repayment date -(dd/mm/yy):'   )
+
+    first_slash = lend_date.find('/')
+    second_slash = lend_date.find('/',first_slash)
+
+    dd = lend_date[0:first_slash]
+    mm = lend_date[first_slash+1:second_slash]
+    yy = lend_date[second_slash+1:]
+
+    dd2 = rep_date[0:first_slash]
+    mm2 = rep_date[first_slash+1:second_slash]
+    yy2 = rep_date[second_slash+1:]
+
+    
+    
+    a  = int(rep_date[6:10])
+    b = int(lend_date[6:10])
+    
+    term_in_month = (a-b) * 12 + g
+    print('Lending date is:', lend_date)
+    print('Repayment day of the month is:', dd2)
+    print('Term in month is:',term_in_month)
+
+def FutureCashFlow(pmt,i,n):
+    fv = pmt * (1 + i) ** n
+    
+    for k in enumerate(range(0,n)):
+        fv = fv + pmt * (1 + i) ** n-1
+        print(fv)
+    
+if __name__=='__main__':
+    LoanDetails()
+    loanDate()
+    Amount()
+    Anuity()
+    FutureCashFlow()
+        
